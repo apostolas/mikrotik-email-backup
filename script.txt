@@ -1,0 +1,3 @@
+/tool e-mail set address=74.125.206.108 from=gmailuser@gmail.com password=gmailpassword port=587 start-tls=yes user=gmailuser@gmail.com
+/system backup save name=routername_mail_backup
+/system script> add name=sendemail owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive source="/tool e-mail send to=gmailuser@gmail.com from=gmailuser@gmail.com file=routername_email_backup.backup body=\"Backup file is attached.\" subject=\"Backup | Router Identity: \$[/system identity get name]\""
